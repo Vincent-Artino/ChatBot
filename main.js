@@ -87,7 +87,7 @@ function receivedMessage(event){
                         ]
                      }
                 }
-        sendAttachment(attach)
+        sendAttachment(senderID,attach)
 
 	}
 	else{
