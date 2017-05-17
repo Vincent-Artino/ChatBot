@@ -82,7 +82,8 @@ function receivedMessage(event){
                                 "type":"web_url",
                                 "url":"https://the-dream-app.herokuapp.com/",
                                 "title":"View Item",
-                                "webview_height_ratio": "compact"
+                                "webview_height_ratio": "tall",
+				"messenger_extensions":true
                            }
                         ]
                      }
