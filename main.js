@@ -39,7 +39,7 @@ function receivedMessage(event){
 	var messageAttachments = message.attachments 
 	console.log(messageAttachments)
 	if(messageText){
-		
+		console.log("hey")
 		var attach = {
                   type:"template",
                      payload:{
