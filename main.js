@@ -73,11 +73,11 @@ function receivedMessage(event){
 	if(messageText){
 		console.log("hey")
 		var attach = {
-                  type:"template",
-                     payload:{
-                        template_type:"button",
-                        text:"Need further assistance? Talk to a representative",
-                        buttons:[
+                  "type":"template",
+                     "payload":{
+                        "template_type":"button",
+                        "text":"Need further assistance? Talk to a representative",
+                        "buttons":[
                            {
                                 "type":"web_url",
                                 "url":"https://the-dream-app.herokuapp.com/",
