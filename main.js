@@ -32,6 +32,38 @@ var GetStartedButton = {
 }
 threadSetUp(GetStartedButton)
 webViewSetUp()
+app.post('/webhook', function (req, res) {
+	var data = req.body;
+	if(data.object === 'page'){
+	data.entry.forEach(function(entry){
+		var pageId = entry.id;
+		var time = entry.time;
+		entry.messaging.forEach(function(event){
+		if(event.message){
+			receivedMessage(event);		
+		}
+		else if(event.postback){
+			if(event.postback.payload=='Get started'){
+				console.log(getDetails(event.sender.id))
+				//sendTextMessage(event.sender.id,"Hello "+getFirstName(event.sender.id))
+				var loc = [
+				      {
+					"content_type":"location",
+				      }
+				]
+				sendQuick(event.sender.id,"please set a default location",loc)
+			}
+		}
+		else{
+			console.log("Unknown event : ",event);
+		}
+	});
+});
+
+res.sendStatus(200);
+}
+});
+
 function receivedMessage(event){
 	var message = event.message;
 	var senderID = event.sender.id;
